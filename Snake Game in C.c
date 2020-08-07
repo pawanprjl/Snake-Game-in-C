@@ -102,12 +102,12 @@ void movement(){
        &&(abs(dir-var)>5)) dir = var;
     if(dir =='d'){
         y++;
-        if(Field[x][y]!=0 && Field[x][y]!=-1) GameOver();
         if(y==M-1) y = 0;
+        if(Field[x][y]!=0 && Field[x][y]!=-1) GameOver();
         if(Field[x][y]==-1){
             Frogs = 0;
             score+=5;
-            Tail -= 2;
+            Tail -= 1;
         }
 
         Head++;
@@ -116,12 +116,12 @@ void movement(){
 
     if(dir =='a'){
         y--;
-        if(Field[x][y]!=0 && Field[x][y]!=-1) GameOver();
         if(y==0) y = M-1;
+        if(Field[x][y]!=0 && Field[x][y]!=-1) GameOver();
         if(Field[x][y]==-1){
             Frogs = 0;
             score+=5;
-            Tail -= 2;
+            Tail -= 1;
         }
         Head++;
         Field[x][y] = Head;
@@ -129,12 +129,12 @@ void movement(){
 
     if(dir =='w'){
         x--;
-        if(Field[x][y]!=0 && Field[x][y]!=-1) GameOver();
         if(x==-1) x = N-1;
+        if(Field[x][y]!=0 && Field[x][y]!=-1) GameOver();
         if(Field[x][y]==-1){
             Frogs = 0;
             score+=5;
-            Tail -= 2;
+            Tail -= 1;
         }
         Head++;
         Field[x][y] = Head;
@@ -142,12 +142,12 @@ void movement(){
 
     if(dir =='s'){
         x++;
+        if(x==N-1) x = 0;
         if(Field[x][y]!=0 && Field[x][y]!=-1) GameOver();
-        if(x==N) x = 0;
         if(Field[x][y]==-1){
             Frogs = 0;
             score+=5;
-            Tail -= 2;
+            Tail -= 1;
         }
         Head++;
         Field[x][y] = Head;
